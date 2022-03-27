@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'background_color',
+        'text_color'
     ];
 
     /**
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
+
+    public function visits()
+    {
+        return $this->hasManyThrough(Visit::class, Link::class);
+    }
 }
