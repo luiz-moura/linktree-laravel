@@ -1,9 +1,7 @@
 <x-guest-layout>
-    <x-auth-card>
+    <x-auth-card title="Log in to your Linktree account">
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <a href="{{ route('dashboard') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
         </x-slot>
 
         <!-- Session Status -->
@@ -17,19 +15,21 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="block mt-1 w-full"
+                         type="email"
+                         name="email"
+                         :value="old('email')"
+                         placeholder="Username"
+                         required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
                 <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                         type="password"
+                         name="password"
+                         placeholder="Password"
+                         required autocomplete="current-password" />
             </div>
 
             <!-- Remember Me -->
@@ -41,16 +41,23 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
             </div>
+
+            @if (Route::has('password.request'))
+                <div class="text-center mt-6">
+                    <a class="text-base hover:underline" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                </div>
+            @endif
+
+            <!-- Create account -->
+            <p class="mt-8 text-center">
+                {{ __('Don`t have an account?') }} <a class="underline font-bold" href="{{ route('register') }}">{{ __('Create One') }}</a>
+            </p>
         </form>
     </x-auth-card>
 </x-guest-layout>
