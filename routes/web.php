@@ -6,9 +6,9 @@ use App\Http\Controllers\LinkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisitController;
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->name('dashboard');
+Route::get('/', function () {
+    return view('layouts.home');
+})->name('home');
 
 Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::resource('links', LinkController::class);

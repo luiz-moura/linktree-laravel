@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card title="Thanks for signing up 🥳">
         <x-slot name="logo">
-            <a href="{{ route('dashboard') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
         </x-slot>
 
         To verify your account, click on the link sent to your inbox ({{ auth()->user()->email }})

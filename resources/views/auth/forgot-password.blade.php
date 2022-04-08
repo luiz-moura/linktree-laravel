@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card title="Enter your Linktree username to receive a password reset email.">
         <x-slot name="logo">
-            <a href="{{ route('dashboard') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
         </x-slot>
 
         <div class="mb-8 text-base text-gray-800">

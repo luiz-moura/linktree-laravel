@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card title="Log in to your Linktree account">
         <x-slot name="logo">
-            <a href="{{ route('dashboard') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('img/linktree.svg') }}" alt="Logo"></a>
         </x-slot>
 
         <!-- Session Status -->
